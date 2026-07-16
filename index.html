@@ -157,10 +157,179 @@
       background: none; border: none; cursor: pointer; font-size: 28px; color: var(--ink);
     }
 
+    /* ============================================================
+       MOBILE FULLSCREEN MENU (Unified Premium Style - Safe Override)
+       ============================================================ */
+    @media (min-width: 951px) {
+      .mobile-menu {
+        display: none !important;
+      }
+    }
     @media (max-width: 950px) {
-      .nav-links { display: none; }
-      .nav-toggle { display: flex; }
+      .nav-links { display: none !important; }
+      .nav-toggle { display: flex !important; }
       .nav-inner { padding: 16px 24px; }
+      
+      .mobile-menu {
+        display: none !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100vh !important;
+        background: var(--paper, #faf9f7) !important;
+        z-index: 1100 !important;
+        padding: 24px 24px 40px !important;
+        flex-direction: column !important;
+        overflow-y: auto !important;
+      }
+      .mobile-menu.open {
+        display: flex !important;
+      }
+      .mobile-menu-header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        margin-bottom: 24px !important;
+        border-bottom: 1px solid var(--line, #e8e2d6) !important;
+        padding-bottom: 16px !important;
+      }
+      .mobile-logo img {
+        height: 40px !important;
+        width: auto !important;
+        object-fit: contain !important;
+      }
+      .mobile-close {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 36px !important;
+        height: 36px !important;
+        border-radius: 50% !important;
+        background: var(--line, #e8e2d6) !important;
+        border: none !important;
+        cursor: pointer !important;
+        font-size: 18px !important;
+        color: var(--ink, #1a1a1a) !important;
+        pointer-events: auto !important;
+        transition: background 0.3s, color 0.3s !important;
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+      }
+      .mobile-close:hover {
+        background: var(--gold, #b8912a) !important;
+        color: #fff !important;
+      }
+      .mobile-menu > a {
+        display: block !important;
+        padding: 16px 0 !important;
+        font-size: 22px !important;
+        font-family: var(--ff-display, 'Cormorant Garamond', Georgia, serif) !important;
+        border-bottom: 1px solid var(--line, #e8e2d6) !important;
+        color: var(--ink, #1a1a1a) !important;
+        text-decoration: none !important;
+      }
+      .mobile-menu > a:hover {
+        color: var(--gold, #b8912a) !important;
+      }
+      .mobile-dropdown {
+        display: flex !important;
+        flex-direction: column !important;
+        border-bottom: 1px solid var(--line, #e8e2d6) !important;
+      }
+      .mobile-dropdown-toggle {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 16px 0 !important;
+        font-size: 22px !important;
+        font-family: var(--ff-display, 'Cormorant Garamond', Georgia, serif) !important;
+        color: var(--ink, #1a1a1a) !important;
+        cursor: pointer !important;
+      }
+      .mobile-dropdown-toggle svg {
+        width: 12px !important;
+        height: 8px !important;
+        stroke: currentColor !important;
+        fill: none !important;
+        stroke-width: 1.5 !important;
+        transition: transform 0.4s !important;
+      }
+      .mobile-dropdown.open .mobile-dropdown-toggle svg {
+        transform: rotate(180deg) !important;
+        color: var(--gold, #b8912a) !important;
+      }
+      .mobile-dropdown-menu {
+        display: none !important;
+        flex-direction: column !important;
+        padding-left: 20px !important;
+        padding-bottom: 12px !important;
+      }
+      .mobile-dropdown.open .mobile-dropdown-menu {
+        display: flex !important;
+      }
+      .mobile-dropdown-menu a {
+        border-bottom: none !important;
+        font-size: 16px !important;
+        padding: 10px 0 !important;
+        font-family: var(--ff-body, 'Jost', sans-serif) !important;
+        color: var(--ink-soft, #4a4a4a) !important;
+      }
+      .mobile-dropdown-menu a:hover {
+        color: var(--gold, #b8912a) !important;
+      }
+      .mobile-contact {
+        margin-top: 24px !important;
+        padding-top: 24px !important;
+        border-top: 1px solid var(--line, #e8e2d6) !important;
+      }
+      .mobile-contact-label {
+        font-size: 11px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.1em !important;
+        color: var(--ink-soft, #7a7a7a) !important;
+        margin-bottom: 8px !important;
+      }
+      .mobile-contact a {
+        display: block !important;
+        font-size: 18px !important;
+        color: var(--ink, #1a1a1a) !important;
+        text-decoration: none !important;
+        margin-bottom: 6px !important;
+        font-family: var(--ff-body, 'Jost', sans-serif) !important;
+      }
+      .mobile-contact a:hover {
+        color: var(--gold, #b8912a) !important;
+      }
+      .mobile-socials {
+        display: flex !important;
+        gap: 12px !important;
+        margin-top: 16px !important;
+      }
+      .mobile-socials a {
+        width: 36px !important;
+        height: 36px !important;
+        border-radius: 50% !important;
+        border: 1px solid var(--line, #e8e2d6) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transition: background 0.3s, border-color 0.3s !important;
+      }
+      .mobile-socials a:hover {
+        background: var(--gold, #b8912a) !important;
+        border-color: var(--gold, #b8912a) !important;
+      }
+      .mobile-socials a svg {
+        width: 16px !important;
+        height: 16px !important;
+        fill: currentColor !important;
+        transition: fill 0.3s !important;
+      }
+      .mobile-socials a:hover svg {
+        fill: #fff !important;
+      }
     }
 
     /* ============================================================
@@ -588,7 +757,7 @@
           </a>
         </li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" onclick="event.stopPropagation(); event.preventDefault(); document.getElementById('mobileMenu').classList.add('open');" ontouchstart="event.stopPropagation(); event.preventDefault(); document.getElementById('mobileMenu').classList.add('open');">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -596,7 +765,10 @@
 
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-close" id="mobileClose">✕</button>
+    <div class="mobile-menu-header">
+      <a href="index.html" class="mobile-logo"><img src="le reve.jpg" alt="Le Rêve" /></a>
+      <button class="mobile-close" id="mobileClose" onclick="event.stopPropagation(); event.preventDefault(); document.getElementById('mobileMenu').classList.remove('open');" ontouchstart="event.stopPropagation(); event.preventDefault(); document.getElementById('mobileMenu').classList.remove('open');">✕</button>
+    </div>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     
@@ -620,7 +792,27 @@
 
     <a href="testimonials.html">Testimonials</a>
     <a href="contact.html">Contact</a>
-    <a href="contact.html" style="color:var(--gold);margin-top:8px;">Get In Touch →</a>
+
+    <div class="mobile-contact">
+      <div class="mobile-contact-label">Call Us</div>
+      <a href="tel:+919744750812">097447 50812</a>
+      <a href="tel:+918089127525">080891 27525</a>
+      
+      <div class="mobile-socials">
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" aria-label="Pinterest">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.19-.77 1.28-5.43 1.28-5.43s-.33-.65-.33-1.62c0-1.52.88-2.66 1.98-2.66.93 0 1.39.7 1.39 1.54 0 .94-.6 2.34-.91 3.64-.26 1.09.54 1.97 1.6 1.97 1.92 0 3.22-2.47 3.22-5.4 0-2.23-1.51-3.9-4.01-3.9-2.93 0-4.76 2.19-4.76 4.64 0 .84.24 1.43.62 1.89.07.08.08.16.06.25l-.23.9c-.04.14-.13.17-.3.1-1.11-.46-1.61-1.69-1.61-3.08C6.83 8.18 9.28 6 12.72 6c2.75 0 4.6 2.01 4.6 4.18 0 3.22-1.8 5.64-4.44 5.64-.89 0-1.73-.48-2.02-1.02l-.55 2.11c-.2.77-.74 1.73-1.1 2.32.83.26 1.71.4 2.62.4 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
   </div>
 
   <!-- ============================================================

@@ -36,7 +36,6 @@ htmlFiles.forEach(file => {
     // Apply minor CSS fixes to make sure it matches index.html precisely
     content = content.replace(/\.nav-dropdown > a svg \{ width: 10px; height: 10px; \}/, '.nav-dropdown > a svg { width: 10px; height: 6px; }');
     content = content.replace(/width: 14px; height: 8px/g, 'width: 10px; height: 6px'); // Fix mobile svg caret size
-    content = content.replace(/<svg viewBox="0 0 24 24">/g, '<svg viewBox="0 0 10 6">'); // Replace old svg viewboxes
 
     fs.writeFileSync(path.join(dir, file), content);
     console.log('Updated ' + file);
