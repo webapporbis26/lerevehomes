@@ -13,13 +13,14 @@
   <style>
     /* RESET & BASE FOR NAVBAR */
     :root {
-      --gold:       #b8912a;
-      --gold-light: #d4ac50;
-      --gold-pale:  #f5edd8;
+      --gold:       #2E120E;
+      --gold-light: #4E231E;
+      --gold-pale:  #F5F0EC;
+      --accent-gold: #C8A96A;
       --ink:        #1a1a1a;
       --ink-soft:   #555;
       --paper:      #ffffff;
-      --bg-light:   #fcfbf7;
+      --bg-light:   #F5F0EC;
       --line:       #e8e2d6;
       --ff-display: 'Cormorant Garamond', Georgia, serif;
       --ff-body:    'Jost', sans-serif;
@@ -30,9 +31,17 @@
     #scroll-progress { position: fixed; top: 0; left: 0; height: 2px; width: 0%; background: var(--gold); z-index: 9999; transition: width 0.1s; }
 
     /* NAVBAR */
-    #navbar { position: fixed; left: 0; top: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.98); box-shadow: 0 1px 0 var(--line); backdrop-filter: blur(10px); transition: background var(--transition), box-shadow var(--transition); }
+    #navbar,
+    #navbar.scrolled {
+      position: absolute; left: 0; top: 0; width: 100%; z-index: 1000;
+      background: transparent !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+      border: none !important;
+      transition: background var(--transition), box-shadow var(--transition);
+    }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 100%; margin: 0; padding: 16px 4%; }
-    .nav-logo img { height: 50px; width: auto; object-fit: contain; }
+    .nav-logo img { height: 140px; width: auto; object-fit: contain; }
     .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; margin: 0; padding: 0; }
     .nav-links a { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); position: relative; padding-bottom: 4px; transition: color var(--transition); text-decoration: none; }
     .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold); transition: width var(--transition); }
@@ -140,7 +149,7 @@
         transition: background 0.3s, color 0.3s !important;
       }
       .mobile-close:hover {
-        background: var(--gold, #b8912a) !important;
+        background: var(--gold, #2E120E) !important;
         color: #fff !important;
       }
       .mobile-menu > a {
@@ -153,7 +162,7 @@
         text-decoration: none !important;
       }
       .mobile-menu > a:hover {
-        color: var(--gold, #b8912a) !important;
+        color: var(--gold, #2E120E) !important;
       }
       .mobile-dropdown {
         display: flex !important;
@@ -180,7 +189,7 @@
       }
       .mobile-dropdown.open .mobile-dropdown-toggle svg {
         transform: rotate(180deg) !important;
-        color: var(--gold, #b8912a) !important;
+        color: var(--gold, #2E120E) !important;
       }
       .mobile-dropdown-menu {
         display: none !important;
@@ -199,7 +208,7 @@
         color: var(--ink-soft, #4a4a4a) !important;
       }
       .mobile-dropdown-menu a:hover {
-        color: var(--gold, #b8912a) !important;
+        color: var(--gold, #2E120E) !important;
       }
       .mobile-contact {
         margin-top: 24px !important;
@@ -222,7 +231,7 @@
         font-family: var(--ff-body, 'Jost', sans-serif) !important;
       }
       .mobile-contact a:hover {
-        color: var(--gold, #b8912a) !important;
+        color: var(--gold, #2E120E) !important;
       }
       .mobile-socials {
         display: flex !important;
@@ -240,8 +249,8 @@
         transition: background 0.3s, border-color 0.3s !important;
       }
       .mobile-socials a:hover {
-        background: var(--gold, #b8912a) !important;
-        border-color: var(--gold, #b8912a) !important;
+        background: var(--gold, #2E120E) !important;
+        border-color: var(--gold, #2E120E) !important;
       }
       .mobile-socials a svg {
         width: 16px !important;
@@ -278,7 +287,7 @@
   <nav id="navbar" class="scrolled">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="le reve.jpg" alt="Le Rêve Homes Logo" />
+        <img src="img/imagess/le reve logo.png" alt="Le Rêve Homes Logo" />
       </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -322,7 +331,7 @@
     <!-- Mobile menu -->
   <div class="mobile-menu" id="mobileMenu">
     <div class="mobile-menu-header">
-      <a href="index.html" class="mobile-logo"><img src="le reve.jpg" alt="Le Rêve" /></a>
+      <a href="index.html" class="mobile-logo"><img src="img/imagess/le reve logo.png" alt="Le Rêve" /></a>
       <button class="mobile-close" id="mobileClose" onclick="event.stopPropagation(); event.preventDefault(); document.getElementById('mobileMenu').classList.remove('open');" ontouchstart="event.stopPropagation(); event.preventDefault(); document.getElementById('mobileMenu').classList.remove('open');">✕</button>
     </div>
     <a href="index.html">Home</a>
@@ -569,21 +578,28 @@
     #footer * { box-sizing: border-box; margin: 0; padding: 0; }
     #footer .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
     #footer .footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1.2fr 1.2fr; gap: 48px; padding: 64px 0 52px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-    #footer .footer-brand img { height: 56px; width: auto; object-fit: contain; margin-bottom: 16px; filter: none !important; }
+    .footer-brand img,
+    #footer .footer-brand img {
+      height: 120px !important;
+      width: auto !important;
+      object-fit: contain !important;
+      margin-top: -20px !important;
+      margin-bottom: 8px !important;
+    }
     #footer .footer-brand p { font-size: 13px; line-height: 1.8; max-width: 240px; }
     #footer .footer-social { display: flex; gap: 10px; margin-top: 20px; }
     #footer .footer-social a { width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.18); display: grid; place-items: center; transition: border-color 0.4s, background 0.4s; color: #fff;}
-    #footer .footer-social a:hover { border-color: #b8912a; background: #b8912a; }
+    #footer .footer-social a:hover { border-color: #4E231E; background: #4E231E; }
     #footer .footer-social a svg { width: 14px; height: 14px; stroke: #fff; fill: none; stroke-width: 1.8; }
     #footer .footer-col h5 { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #fff; margin-bottom: 20px; }
     #footer .footer-col ul { display: flex; flex-direction: column; gap: 10px; list-style: none; }
     #footer .footer-col ul a { font-size: 13.5px; color: rgba(255,255,255,0.6); transition: color 0.4s; text-decoration: none; }
-    #footer .footer-col ul a:hover { color: #b8912a; }
+    #footer .footer-col ul a:hover { color: #4E231E; }
     #footer .footer-contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
-    #footer .footer-contact-item svg { width: 16px; height: 16px; stroke: #b8912a; fill: none; stroke-width: 1.8; flex-shrink: 0; margin-top: 2px; }
+    #footer .footer-contact-item svg { width: 16px; height: 16px; stroke: #2E120E; fill: none; stroke-width: 1.8; flex-shrink: 0; margin-top: 2px; }
     #footer .footer-contact-item span { font-size: 13.5px; color: rgba(255,255,255,0.65); line-height: 1.6; }
     #footer .footer-contact-item a { color: rgba(255,255,255,0.65); transition: color 0.4s; text-decoration: none; }
-    #footer .footer-contact-item a:hover { color: #b8912a; }
+    #footer .footer-contact-item a:hover { color: #4E231E; }
     #footer .footer-bottom { display: flex; align-items: center; justify-content: center; padding: 22px 0; font-size: 12.5px; color: rgba(255,255,255,0.35); letter-spacing: 0.04em; }
     @media (max-width: 860px) { #footer .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; padding: 50px 0 40px; } }
     @media (max-width: 560px) {
@@ -596,7 +612,7 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="le reve.jpg" alt="Le Rêve Homes" />
+          <img src="img/imagess/le reve logo.png" alt="Le Rêve Homes" />
           <p>We create elegant, functional and sustainable homes that inspire and stand the test of time.</p>
           <div class="footer-social">
             <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>

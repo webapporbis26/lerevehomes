@@ -17,13 +17,14 @@
     /* RESET & BASE */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --gold:       #b8912a;
-      --gold-light: #d4ac50;
-      --gold-pale:  #f5edd8;
+      --gold:       #2E120E;
+      --gold-light: #4E231E;
+      --gold-pale:  #F5F0EC;
+      --accent-gold: #C8A96A;
       --ink:        #1a1a1a;
       --ink-soft:   #555;
       --paper:      #ffffff;
-      --bg-light:   #fcfbf7; /* Matching the beautiful tan background from mockup */
+      --bg-light:   #F5F0EC; /* Matching the beautiful tan background from mockup */
       --line:       #e8e2d6;
       --ff-display: 'Cormorant Garamond', Georgia, serif;
       --ff-body:    'Jost', sans-serif;
@@ -43,9 +44,17 @@
     #scroll-progress { position: fixed; top: 0; left: 0; height: 2px; width: 0%; background: var(--gold); z-index: 9999; transition: width 0.1s; }
 
     /* NAVBAR - same as index */
-    #navbar { position: fixed; left: 0; top: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.98); box-shadow: 0 1px 0 var(--line); backdrop-filter: blur(10px); transition: background var(--transition), box-shadow var(--transition); }
+    #navbar,
+    #navbar.scrolled {
+      position: absolute; left: 0; top: 0; width: 100%; z-index: 1000;
+      background: transparent !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+      border: none !important;
+      transition: background var(--transition), box-shadow var(--transition);
+    }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 100%; margin: 0; padding: 16px 4%; }
-    .nav-logo img { height: 50px; width: auto; object-fit: contain; }
+    .nav-logo img { height: 140px; width: auto; object-fit: contain; }
     .nav-links { display: flex; align-items: center; gap: 32px; }
     .nav-links a { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); position: relative; padding-bottom: 4px; transition: color var(--transition); }
     .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold); transition: width var(--transition); }
@@ -222,7 +231,14 @@
       gap: 48px; padding: 64px 0 52px;
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-    .footer-brand img { height: 56px; width: auto; object-fit: contain; margin-bottom: 16px; }
+    .footer-brand img,
+    #footer .footer-brand img {
+      height: 120px !important;
+      width: auto !important;
+      object-fit: contain !important;
+      margin-top: -20px !important;
+      margin-bottom: 8px !important;
+    }
     .footer-brand p { font-size: 13px; line-height: 1.8; max-width: 240px; }
     .footer-social { display: flex; gap: 10px; margin-top: 20px; }
     .footer-social a {
@@ -326,7 +342,7 @@
       display: block; padding: 14px 0; font-size: 22px; font-family: 'Cormorant Garamond', Georgia, serif;
       border-bottom: 1px solid #e8e2d6; color: #1a1a1a;
     }
-    .mobile-menu > a:hover { color: #b8912a; }
+    .mobile-menu > a:hover { color: #4E231E; }
     .mobile-close {
       position: absolute; top: 24px; right: 24px;
       background: none; border: none; cursor: pointer; font-size: 28px; color: #1a1a1a;
@@ -338,13 +354,13 @@
       color: #1a1a1a; cursor: pointer;
     }
     .mobile-dropdown-toggle svg { width: 14px; height: 8px; stroke: currentColor; fill: none; stroke-width: 1.5; transition: transform 0.4s; }
-    .mobile-dropdown.open .mobile-dropdown-toggle svg { transform: rotate(180deg); color: #b8912a; }
+    .mobile-dropdown.open .mobile-dropdown-toggle svg { transform: rotate(180deg); color: #2E120E; }
     .mobile-dropdown-menu {
       display: none; flex-direction: column; padding-left: 20px; padding-bottom: 10px;
     }
     .mobile-dropdown.open .mobile-dropdown-menu { display: flex; }
     .mobile-dropdown-menu a { border-bottom: none; font-size: 16px; padding: 10px 0; font-family: 'Jost', sans-serif; color: #1a1a1a; }
-    .mobile-dropdown-menu a:hover { color: #b8912a; }
+    .mobile-dropdown-menu a:hover { color: #4E231E; }
     @media (max-width: 950px) {
       .nav-links { display: none !important; }
       .nav-toggle { display: flex !important; }
@@ -361,7 +377,7 @@
   <nav id="navbar" class="scrolled">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="le reve.jpg" alt="Le Rêve Homes Logo" />
+        <img src="img/imagess/le reve logo.png" alt="Le Rêve Homes Logo" />
       </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -502,7 +518,7 @@
       <div class="footer-top">
         <!-- Brand -->
         <div class="footer-brand">
-          <img src="le reve.jpg" alt="Le Rêve Homes" />
+          <img src="img/imagess/le reve logo.png" alt="Le Rêve Homes" />
           <p>We create elegant, functional and sustainable homes that inspire and stand the test of time.</p>
           <div class="footer-social">
             <a href="#" aria-label="Facebook">
