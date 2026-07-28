@@ -20,7 +20,7 @@
       --gold:       #2E120E;
       --gold-light: #4E231E;
       --gold-pale:  #F5F0EC;
-      --accent-gold: #C8A96A;
+      --accent-gold: #4E231E;
       --ink:        #1a1a1a;
       --ink-soft:   #555;
       --paper:      #ffffff;
@@ -75,9 +75,9 @@
     .dropdown-menu a { display: block; padding: 12px 20px; font-size: 11px; color: var(--ink) !important; letter-spacing: 0.1em; transition: color var(--transition); }
     .dropdown-menu a:hover { color: var(--gold) !important; background: var(--bg-light); }
     .dropdown-menu a::after { display: none; }
-    .nav-cta { display: inline-flex; align-items: center; gap: 8px; background: #a68428; border: 1px solid #a68428; color: #fff !important; padding: 10px 24px; border-radius: 2px; font-size: 11px !important; font-weight: 600 !important; letter-spacing: 0.12em !important; transition: background var(--transition), color var(--transition) !important; }
+    .nav-cta { display: inline-flex; align-items: center; gap: 8px; background: #2E120E; border: 1px solid #2E120E; color: #fff !important; padding: 10px 24px; border-radius: 2px; font-size: 11px !important; font-weight: 600 !important; letter-spacing: 0.12em !important; transition: background var(--transition), color var(--transition) !important; }
     .nav-cta::after { display: none !important; }
-    .nav-cta:hover { background: #8e701e; border-color: #8e701e; color: #fff !important; }
+    .nav-cta:hover { background: #4E231E; border-color: #4E231E; color: #fff !important; }
     
     .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
     .nav-toggle span { display: block; width: 24px; height: 1.5px; background: var(--ink); transition: background var(--transition); }
@@ -559,7 +559,7 @@
     .footer-top { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; padding: 64px 0 52px; border-bottom: 1px solid rgba(255,255,255,0.05); max-width: 1000px; margin: 0 auto;}
     
     .footer-contact-item { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
-    .footer-icon-circle { width: 44px; height: 44px; border-radius: 50%; background: #a68428; display: grid; place-items: center; flex-shrink: 0; }
+    .footer-icon-circle { width: 44px; height: 44px; border-radius: 50%; background: #2E120E; display: grid; place-items: center; flex-shrink: 0; }
     .footer-icon-circle svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 1.8; }
     
     .footer-contact-item span { display: flex; flex-direction: column; gap: 4px; }
@@ -567,7 +567,7 @@
     .footer-contact-item span a, .footer-contact-item span p { font-size: 12.5px; color: rgba(255,255,255,0.65); transition: color var(--transition); margin:0;}
     .footer-contact-item span a:hover { color: var(--gold); }
     
-    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; font-size: 12.5px; color: rgba(255,255,255,0.5); background: #a68428; color:#fff; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; font-size: 12.5px; color: rgba(255,255,255,0.5); background: #2E120E; color:#fff; }
     .footer-bottom .container { display: flex; justify-content: space-between; align-items: center; }
     
     .footer-social { display: flex; gap: 16px; }
@@ -587,7 +587,7 @@
     .float-btn { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.18); transition: transform var(--transition); background: #25D366; }
     .float-btn:hover { transform: scale(1.1); }
     .float-btn img { width: 30px; height: 30px; object-fit: contain; }
-    .float-btn.mail { background: #a68428; font-size: 22px; color: #fff; text-decoration: none; }
+    .float-btn.mail { background: #2E120E; font-size: 22px; color: #fff; text-decoration: none; }
 
     /* BACK TO TOP */
     #back-top { position: fixed; right: 16px; bottom: 24px; z-index: 500; width: 42px; height: 42px; border-radius: 50%; background: rgba(0,0,0,0.3); border: 1px solid #fff; color: #fff; display: grid; place-items: center; opacity: 0; pointer-events: none; transition: opacity var(--transition), transform var(--transition); cursor: pointer; }
@@ -666,15 +666,22 @@
       margin-bottom: 8px !important;
     }
 
+    
+
     /* Mobile Logo and Header Alignment Fixes */
     @media (max-width: 950px) {
+      #navbar {
+        background: transparent !important;
+        backdrop-filter: none !important;
+        box-shadow: none !important;
+      }
       .nav-inner {
         padding: 16px 12px !important;
       }
       .nav-logo img {
         height: 130px !important;
         margin-left: -15px !important;
-        
+        object-position: left !important;
       }
     }
   </style>

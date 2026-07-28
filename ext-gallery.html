@@ -17,8 +17,8 @@
     ============================================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --gold:        #2E120E;
-      --gold-light:  #4E231E;
+      --gold:       #2E120E;
+      --gold-light: #4E231E;
       --ink:         #1a1a1a;
       --ink-soft:    #555555;
       --paper:       #faf9f7;
@@ -1691,15 +1691,22 @@
       #footer .footer-col:last-child { grid-column: span 2; }
     }
 
+    
+
     /* Mobile Logo and Header Alignment Fixes */
     @media (max-width: 950px) {
+      #navbar {
+        background: transparent !important;
+        backdrop-filter: none !important;
+        box-shadow: none !important;
+      }
       .nav-inner {
         padding: 16px 12px !important;
       }
       .nav-logo img {
         height: 130px !important;
         margin-left: -15px !important;
-        
+        object-position: left !important;
       }
     }
   </style>
