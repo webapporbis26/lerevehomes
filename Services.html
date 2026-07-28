@@ -52,7 +52,12 @@
       border: none !important;
       transition: background var(--transition), box-shadow var(--transition);
     }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 100%; margin: 0; padding: 16px 4%; }
+    #navbar {
+        background: transparent !important;
+        backdrop-filter: none !important;
+        box-shadow: none !important;
+      }
+      .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 100%; margin: 0; padding: 16px 4%; }
     .nav-logo img { height: 140px; width: auto; object-fit: contain; }
     .nav-links { display: flex; align-items: center; gap: 32px; }
     .nav-links a { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); position: relative; padding-bottom: 4px; transition: color var(--transition); }
@@ -344,7 +349,7 @@
         padding-bottom: 16px !important;
       }
       .mobile-logo img {
-        height: 40px !important;
+        height: 90px !important;
         width: auto !important;
         object-fit: contain !important;
       }

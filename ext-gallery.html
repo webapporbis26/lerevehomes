@@ -61,7 +61,12 @@
       transition: padding var(--transition), background var(--transition), box-shadow var(--transition);
     }
 
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    #navbar {
+        background: transparent !important;
+        backdrop-filter: none !important;
+        box-shadow: none !important;
+      }
+      .nav-inner { display: flex; align-items: center; justify-content: space-between; }
     .nav-logo img { height: 140px; width: auto; object-fit: contain; }
     .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
     .nav-links a { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); transition: color var(--transition); }
@@ -481,7 +486,7 @@
         padding-bottom: 16px !important;
       }
       .mobile-logo img {
-        height: 40px !important;
+        height: 90px !important;
         width: auto !important;
         object-fit: contain !important;
       }
@@ -1684,6 +1689,18 @@
       #footer .footer-top { grid-template-columns: 1fr 1fr; gap: 30px; }
       #footer .footer-brand { grid-column: span 2; }
       #footer .footer-col:last-child { grid-column: span 2; }
+    }
+
+    /* Mobile Logo and Header Alignment Fixes */
+    @media (max-width: 950px) {
+      .nav-inner {
+        padding: 16px 12px !important;
+      }
+      .nav-logo img {
+        height: 130px !important;
+        margin-left: -15px !important;
+        
+      }
     }
   </style>
   <footer id="footer">
